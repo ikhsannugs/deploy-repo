@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: webapps
+  namespace: ENV
+  labels:
+        app: webapps
+spec:
+  selector:
+    matchLabels:
+      app: webapps
+  template: 
+    metadata:
+      labels:
+        app: webapps
+    spec:
+      containers:
+      - name: webapps
+        image: ikhsannugs/webapps:ENV-NO
+        ports:
+        - containerPort: 80
