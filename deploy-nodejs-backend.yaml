@@ -19,7 +19,7 @@ spec:
       - name: nodejs
         image: ikhsannugs/nodejs-backend:ENV-NO
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         env:
         - name: MONGODB_HOST
           value: "149.129.248.62"
