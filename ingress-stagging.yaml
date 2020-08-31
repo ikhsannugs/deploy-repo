@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-stagging
+  namespace: stagging
+spec:
+  rules:
+    - host: ikhsannugs.xyz
+      http:
+        paths: /webapps
+          - backend:
+              serviceName: webapps
+              servicePort: 8020
+    - host: ikhsannugs.xyz
+      http:
+        paths: /nodejs
+          - backend:
+              serviceName: nodejs
+              servicePort: 8010
+status:
+  loadBalancer:
+    ingress:
+      - ip: 147.139.183.13
+
